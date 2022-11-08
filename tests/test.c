@@ -1,9 +1,5 @@
-#include "header.h"
+#include <libzxc/header.h>
 #include <ctest.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 CTEST(is_correct, test_1)
 {
