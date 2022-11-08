@@ -2,7 +2,7 @@ APP_NAME = zxc
 LIB_NAME = libzxc
 TEST_NAME = test
 
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall
 CPPFLAGS = -I src -MP -MMD
 LDFLAGS =
 LSTFLAGS = 
