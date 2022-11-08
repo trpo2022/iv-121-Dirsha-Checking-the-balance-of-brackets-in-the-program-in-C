@@ -48,6 +48,7 @@ int search (char* path)
         }
         i++;
     }
+    free(buffer);
 
     if((k == 0) && (q == 0) && (w == 0) && (e == 0))
     {
