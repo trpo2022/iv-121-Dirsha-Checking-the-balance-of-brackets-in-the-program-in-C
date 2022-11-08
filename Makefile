@@ -61,8 +61,3 @@ $(TEST_PATH): $(TEST_OBJECTS) $(LIB_OBJECTS)
 $(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.c $(LIB_PATH)
 	$(CC) -c $(CFLAGS) -I thirdparty/ $(CPPFLAGS) $< -o $@ $(LSTFLAGS)
 
-.PHONY: clean
-clean:
-	$(RM) $(APP_PATH) $(LIB_PATH) $(TEST_PATH)
-	find $(OBJ_DIR) -name '*.o' -exec $(RM) '{}' \;
-	find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;
