@@ -14,5 +14,5 @@ CTEST(is_correct, test_1)
 CTEST(is_correct, test_2)
 {
     int f = search("test1.txt");
-    ASSERT_EQUAL(0, f);
+     ASSERT_EQUAL(0, f);
 }
