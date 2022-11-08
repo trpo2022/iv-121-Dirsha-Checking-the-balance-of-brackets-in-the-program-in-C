@@ -1,6 +1,6 @@
-APP_NAME = zxc
+APP_NAME = zxc.out
 LIB_NAME = libzxc
-TEST_NAME = test
+TEST_NAME = test.out
 
 CFLAGS = -Wall -Wno-unknown-pragmas
 CPPFLAGS = -I src -MP -MMD
@@ -13,8 +13,8 @@ OBJ_DIR = obj
 SRC_DIR = src
 TEST_DIR = tests
 
-TEST_PATH = $(BIN_DIR)/$(TEST_NAME).out
-APP_PATH = $(BIN_DIR)/$(APP_NAME).out
+TEST_PATH = $(BIN_DIR)/$(TEST_NAME)
+APP_PATH = $(BIN_DIR)/$(APP_NAME)
 LIB_PATH = $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(LIB_NAME).a
 
 SRC_EXT = c
