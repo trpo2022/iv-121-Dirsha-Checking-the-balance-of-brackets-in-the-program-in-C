@@ -28,14 +28,11 @@
 typedef void (*ctest_setup_func)(void*);
 typedef void (*ctest_teardown_func)(void*);
 
-#define CTEST_IMPL_PRAGMA(x) _Pragma(#x)
-
 #if defined(__GNUC__)
 #if defined(__clang__) || __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)
 /* the GCC argument will work for both gcc and clang  */
 #define CTEST_IMPL_DIAG_PUSH_IGNORED(w)                                                            \
-    CTEST_IMPL_PRAGMA(GCC diagnostic push)                                                         \
-    CTEST_IMPL_PRAGMA(GCC diagnostic ignored "-W" #w)
+    CTEST_IMPL_PRAGMA(GCC diagnostic push)            
 #define CTEST_IMPL_DIAG_POP() CTEST_IMPL_PRAGMA(GCC diagnostic pop)
 #else
 /* the push/pop functionality wasn't in gcc until 4.6, fallback to "ignored"  */
@@ -47,8 +44,6 @@ typedef void (*ctest_teardown_func)(void*);
 #define CTEST_IMPL_DIAG_PUSH_IGNORED(w)
 #define CTEST_IMPL_DIAG_POP()
 #endif
-
-CTEST_IMPL_DIAG_PUSH_IGNORED(strict - prototypes)
 
 struct ctest
 {
@@ -281,8 +276,6 @@ void CTEST_LOG(const char* fmt, ...)
 
     msg_end();
 }
-
-CTEST_IMPL_DIAG_PUSH_IGNORED(missing - noreturn)
 
 void CTEST_ERR(const char* fmt, ...)
 {
