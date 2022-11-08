@@ -49,10 +49,10 @@ lib: $(LIB_PATH)
 
 test: $(TEST_SOURCES) $(TEST_PATH)
 
-$(TEST_PATH): $(TEST_OBJECTS) 
+$(TEST_PATH): $(TEST_OBJECTS) $(LIB_OBJECTS)
 	$(CC) -I thirdparty/ -MP -MMD $(TEST_OBJECTS) -o $@ $(LDFLAGS) $(LDLIBS) $(LSTFLAGS)
 
-$(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.c
+$(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.c $(LIB_PATH)
 	$(CC) -c $(CFLAGS) -I thirdparty/ -MP -MMD $< -o $@ $(LDFLAGS) $(LDLIBS) $(LSTFLAGS)
 
 .PHONY: clean
