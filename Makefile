@@ -9,7 +9,7 @@ LSTFLAGS =
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
-	CFLAGS:= -Wall -Werror -g3 -O0
+	CFLAGS:= -Wall -g3 -O0
     LSTFLAGS:= -fsanitize=address -fno-omit-frame-pointer
 endif
 
