@@ -30,11 +30,11 @@ while(fgets(buffer, sizeof(buffer), fp) != NULL){
 
 }
  if((k == 0) && (q == 0) && (w == 0) && (e == 0)){
-        return 0;
+        return 1;
  }
  else{
         //printf("%d %d %d %d\n", k, q, w, e);
-        return -1;
+        return 0;
  }
  
   
